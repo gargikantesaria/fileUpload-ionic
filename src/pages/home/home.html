@@ -1,14 +1,19 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic Upload file
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <button (click)="downloadHandler()">Download File</button>
+  <ion-footer *ngIf="downloadFile?.length > 0" class="footerStyle">
+    <div class="divStyle">
+      <p style="float: left">Download successful.</p>
+      <button (click)="openFileHandler()" class="buttonStyle">Open</button>
+      <button (click)="uploadHandler()" class="uploadButtonStyle">Upload</button>
+      <p *ngIf="uploaded">Uploaded successfully.</p>
+    </div>
+  </ion-footer>
 </ion-content>
